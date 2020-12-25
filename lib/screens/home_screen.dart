@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fb_ui/config/pallete.dart';
+import 'package:flutter_fb_ui/data/data.dart';
 import 'package:flutter_fb_ui/widgets/circle_button.dart';
+import 'package:flutter_fb_ui/widgets/create_post_container.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -34,7 +36,10 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () => print('messenger'),
               ),
             ],
-          )
+          ),
+          SliverToBoxAdapter(
+            child: CreatePostContainer(currentUser: currentUser),
+          ),
         ],
       ),
     );
