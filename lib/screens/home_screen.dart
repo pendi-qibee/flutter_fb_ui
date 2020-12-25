@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fb_ui/config/pallete.dart';
 import 'package:flutter_fb_ui/data/data.dart';
-import 'package:flutter_fb_ui/widgets/circle_button.dart';
-import 'package:flutter_fb_ui/widgets/create_post_container.dart';
+import 'package:flutter_fb_ui/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -40,6 +40,12 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: CreatePostContainer(currentUser: currentUser),
           ),
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+            sliver: SliverToBoxAdapter(
+              child: Rooms(onlineUsers: onlineUsers),
+            ),
+          )
         ],
       ),
     );
